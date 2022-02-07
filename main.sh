@@ -23,6 +23,9 @@ else
     pip3 install -U sphinx==$INPUT_SPHINX_VERSION
 fi
 
+echo Installing additional themes
+pip3 install -U sphinx-rtd-theme
+
 echo Adding user bin to system path
 PATH=$HOME/.local/bin:$PATH
 if ! command -v sphinx-build &>/dev/null; then
