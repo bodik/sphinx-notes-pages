@@ -75,11 +75,12 @@ echo ::endgroup::
 echo ::group:: Committing HTML documentation
 cd $repo_dir
 echo Deleting all file in repository
-rm -vrf *
+rm -vrf $GITHUB_REF_NAME
 echo Copying HTML documentation to repository
 # Remove unused doctree
 rm -rf $tmp_dir/.doctrees
-cp -vr $tmp_dir/. .
+mkdir -p $GITHUB_REF_NAME
+cp -vr $tmp_dir/. $GITHUB_REF_NAME/
 echo Adding HTML documentation to repository index
 git add .
 echo Recording changes to repository
