@@ -44,12 +44,12 @@ branch named folders.</p>
 <li><p>create <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory with <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code>, enable <code class="docutils literal notranslate"><span class="pre">sphinx.ext.githubpages</span></code></p></li>
 <li><p>prepare clean <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git checkout --orphan gh-pages</span>
-<span class="go">rm -rf *</span>
-<span class="go">touch .nojekyll</span>
-<span class="go">git add .nojekyll</span>
-<span class="go">git commit -v -a -m &#39;init gh-pages&#39;</span>
-<span class="go">git push origin gh-pages</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git checkout --orphan gh-pages
+<span class="gp">$ </span>rm -rf *
+<span class="gp">$ </span>touch .nojekyll
+<span class="gp">$ </span>git add .nojekyll
+<span class="gp">$ </span>git commit -v -a -m <span class="s1">&#39;init gh-pages&#39;</span>
+<span class="gp">$ </span>git push origin gh-pages
 </pre></div>
 </div>
 <ul class="simple">
@@ -147,23 +147,6 @@ requirements file</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>The following repository’s pages are built by this action:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/SilverRainZ/bullet">https://github.com/SilverRainZ/bullet</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sphinx-notes/pages">https://github.com/sphinx-notes/pages</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sphinx-notes/any">https://github.com/sphinx-notes/any</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sphinx-notes/snippet">https://github.com/sphinx-notes/snippet</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sphinx-notes/lilypond">https://github.com/sphinx-notes/lilypond</a></p></li>
-<li><p><a class="reference external" href="https://github.com/sphinx-notes/strike">https://github.com/sphinx-notes/strike</a></p></li>
-<li><p>…</p></li>
-</ul>
-<p>You can found the workflow file in their repository.</p>
-</section>
-<section id="tips">
-<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
 </section>
 <section id="copy-extra-files-to-site">
 <h2>Copy extra files to site<a class="headerlink" href="#copy-extra-files-to-site" title="Permalink to this headline">¶</a></h2>
