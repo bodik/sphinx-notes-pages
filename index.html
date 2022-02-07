@@ -36,6 +36,26 @@
 <h1>Sphinx to GitHub Pages V2<a class="headerlink" href="#sphinx-to-github-pages-v2" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://github.com/sphinx-notes/pages"><img alt="https://img.shields.io/github/stars/sphinx-notes/pages.svg?style=social&amp;label=Star&amp;maxAge=2592000" src="https://img.shields.io/github/stars/sphinx-notes/pages.svg?style=social&amp;label=Star&amp;maxAge=2592000" /></a>
 <p>Help you deploying your Sphinx documentation to Github Pages.</p>
+<section id="fork-notes">
+<h2>Fork notes<a class="headerlink" href="#fork-notes" title="Permalink to this headline">¶</a></h2>
+<p>Modified Github action <code class="docutils literal notranslate"><span class="pre">sphinx-notes/pages&#64;v2</span></code> which publish built docs in
+branch named folders.</p>
+<ul class="simple">
+<li><p>create <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory with <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code>, enable <code class="docutils literal notranslate"><span class="pre">sphinx.ext.githubpages</span></code></p></li>
+<li><p>prepare clean <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git checkout --orphan gh-pages</span>
+<span class="go">rm -rf *</span>
+<span class="go">touch .nojekyll</span>
+<span class="go">git add .nojekyll</span>
+<span class="go">git commit -v -a -m &#39;init gh-pages&#39;</span>
+<span class="go">git push origin gh-pages</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>add pages.yaml workflow (see Usage)</p></li>
+</ul>
+</section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
@@ -65,7 +85,7 @@ branch. So we need some other actions:</p>
 <span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># otherwise, you will failed to push refs to dest repo</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Commit</span><span class="w"></span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sphinx-notes/pages@v2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bodik/sphinx-notes-pages@v2</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Push changes</span><span class="w"></span>
 <span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad-m/github-push-action@master</span><span class="w"></span>
 <span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
