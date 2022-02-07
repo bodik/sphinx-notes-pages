@@ -7,6 +7,28 @@ Sphinx to GitHub Pages V2
 
 Help you deploying your Sphinx documentation to Github Pages.
 
+
+Fork notes
+==========
+
+Modified Github action ``sphinx-notes/pages@v2`` which publish built docs in
+branch named folders.
+
+- create ``docs/`` directory with ``sphinx-quickstart``, enable ``sphinx.ext.githubpages``
+- prepare clean ``gh-pages`` branch
+
+.. code-block:: console
+
+   git checkout --orphan gh-pages
+   rm -rf *
+   touch .nojekyll
+   git add .nojekyll
+   git commit -v -a -m 'init gh-pages'
+   git push origin gh-pages
+
+- add pages.yaml workflow (see Usage)
+
+
 Usage
 =====
 
@@ -40,7 +62,7 @@ So your workflow file should be:
          with:
            fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
        - name: Build and Commit
-         uses: sphinx-notes/pages@v2
+         uses: bodik/sphinx-notes-pages@v2
        - name: Push changes
          uses: ad-m/github-push-action@master
          with:
