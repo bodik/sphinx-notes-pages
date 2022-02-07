@@ -19,12 +19,12 @@ branch named folders.
 
 .. code-block:: console
 
-   git checkout --orphan gh-pages
-   rm -rf *
-   touch .nojekyll
-   git add .nojekyll
-   git commit -v -a -m 'init gh-pages'
-   git push origin gh-pages
+   $ git checkout --orphan gh-pages
+   $ rm -rf *
+   $ touch .nojekyll
+   $ git add .nojekyll
+   $ git commit -v -a -m 'init gh-pages'
+   $ git push origin gh-pages
 
 - add pages.yaml workflow (see Usage)
 
@@ -69,6 +69,7 @@ So your workflow file should be:
            github_token: ${{ secrets.GITHUB_TOKEN }}
            branch: gh-pages
 
+
 Inputs
 ======
 
@@ -93,23 +94,6 @@ Input                   Default        Required     Description
 ``sphinx_version``      ``''``         ``false``    Custom version of Sphinx
 ======================= ============== ============ =============================
 
-Examples
-========
-
-The following repository's pages are built by this action:
-
-- https://github.com/SilverRainZ/bullet
-- https://github.com/sphinx-notes/pages
-- https://github.com/sphinx-notes/any
-- https://github.com/sphinx-notes/snippet
-- https://github.com/sphinx-notes/lilypond
-- https://github.com/sphinx-notes/strike
-- ...
-
-You can found the workflow file in their repository.
-
-Tips
-====
 
 Copy extra files to site
 ========================
