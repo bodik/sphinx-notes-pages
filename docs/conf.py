@@ -17,13 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'sphinxnotes-pages'
-copyright = '2020, Shengyu Zhang'
-author = 'Shengyu Zhang'
-
-# The full version, including alpha/beta/rc tags
-release = '1.0a'
-
+project = 'bodik/sphinx-notes-pages'
+copyright = '2022, Radoslav Bodó'
+author = 'Radoslav Bodó'
 
 # -- General configuration ---------------------------------------------------
 
